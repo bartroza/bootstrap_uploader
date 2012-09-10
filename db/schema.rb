@@ -11,17 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910144641) do
+ActiveRecord::Schema.define(:version => 20120910151747) do
 
-  create_table "pictures", :force => true do |t|
-    t.string   "name"
-    t.integer  "avatar_uid"
-    t.string   "avatar_name"
-    t.string   "path"
-    t.string   "avatar"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
+# Could not dump table "pictures" because of following StandardError
+#   Unknown type 'reference' for column 'post_id'
 
   create_table "posts", :force => true do |t|
     t.string   "body"

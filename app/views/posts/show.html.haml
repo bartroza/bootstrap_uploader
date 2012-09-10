@@ -4,6 +4,12 @@
   %b Body:
   = @post.body
 
+%br
+  - @post.pictures.each do |picture|
+    = image_tag picture.avatar.thumb
+
+= render "shared/fileupload"
+
 = link_to 'Edit', edit_post_path(@post)
 \|
 = link_to 'Back', posts_path

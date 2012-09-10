@@ -1,8 +1,8 @@
 class PicturesController < ApplicationController
 
   def index
-    @pictures = Picture.all
-    render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
+    # @pictures = Picture.where(:post_id => params["post_id"])
+    # render :json => @pictures.collect { |p| p.to_jq_upload }.to_json
   end
 
   def new
@@ -10,7 +10,8 @@ class PicturesController < ApplicationController
   end
 
   def create
-    @picture = Picture.new
+    @post = Post.find(params[:post_id])
+    @picture = @post.pictures.build
     @picture.avatar = params[:picture][:path]
     if @picture.save
       respond_to do |format|
