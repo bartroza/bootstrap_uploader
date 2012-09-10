@@ -1,9 +1,11 @@
 Fily::Application.routes.draw do
 
-  resources :posts
-
   resources :pictures
-  root :to => 'pictures#new'
+  resources :posts do
+    resources :pictures
+  end
+
+  root :to => 'posts#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
