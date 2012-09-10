@@ -19,9 +19,11 @@ gem "fog"
 
 group :development, :grades, :test do
   gem "launchy"
-  gem "mysql2"
+  # gem "mysql2"
   gem "pry"
 end
+gem "execjs"
+gem "therubyracer"
 
 gem "carrierwave"
 gem "aws-s3"

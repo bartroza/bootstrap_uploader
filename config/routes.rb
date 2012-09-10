@@ -1,5 +1,7 @@
 Fily::Application.routes.draw do
 
+  resources :posts
+
   resources :pictures
   root :to => 'pictures#new'
 
